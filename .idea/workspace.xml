@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89f339fe-5223-43d7-a7b3-fdc5a68ad4d7" name="Default Changelist" comment="">
+    <list default="true" id="89f339fe-5223-43d7-a7b3-fdc5a68ad4d7" name="Default Changelist" comment="Second Commit&#10;Testing:&#10;-commiting from IDEA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Antivirus/Antivirus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Antivirus/Antivirus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CCleaner/CCleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CCleaner/CCleaner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/StartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/StartController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="C:\Users\mxa78\Dropbox\Cleaner\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +42,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/StartController.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="864">
-                    <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+                  <state relative-caret-position="1000">
+                    <caret line="145" column="29" selection-start-line="145" selection-start-column="29" selection-end-line="145" selection-end-column="29" />
                     <folding>
                       <element signature="imports" expanded="true" />
                       <element signature="e#2366#2367#0" expanded="true" />
@@ -80,7 +85,7 @@
         <counts>
           <entry key="css" value="179" />
           <entry key="fxml" value="16" />
-          <entry key="java" value="4500" />
+          <entry key="java" value="5259" />
           <entry key="txt" value="238" />
           <entry key="xml" value="20" />
         </counts>
@@ -88,7 +93,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="179" />
-          <entry key="JAVA" value="4500" />
+          <entry key="JAVA" value="5259" />
           <entry key="PLAIN_TEXT" value="238" />
           <entry key="XML" value="36" />
         </counts>
@@ -116,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+            <state relative-caret-position="448">
+              <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CCleaner/CCleaner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="340">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,8 +145,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Antivirus/Antivirus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="601">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,6 +188,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -197,10 +203,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Style/MainWindow.css" />
         <option value="$PROJECT_DIR$/src/main/resources/Interface/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java" />
         <option value="$PROJECT_DIR$/src/main/java/CCleaner/CCleaner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controllers/StartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java" />
         <option value="$PROJECT_DIR$/src/main/java/Antivirus/Antivirus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controllers/StartController.java" />
       </list>
     </option>
   </component>
@@ -331,8 +337,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534032555321" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ProjectMind/mind" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534038983762" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -385,7 +391,7 @@
       <workItem from="1533868122610" duration="1187000" />
       <workItem from="1533938016590" duration="834000" />
       <workItem from="1533942057227" duration="5744000" />
-      <workItem from="1533992319099" duration="31095000" />
+      <workItem from="1533992319099" duration="36503000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit&#10;Added:&#10;-cleaning PC by CCleaner&#10;-settings for cleaning&#10;-downloading key for antivirus from the Internet &#10;Completed:&#10;-creating UI">
       <created>1534032162555</created>
@@ -401,16 +407,24 @@
       <option name="project" value="LOCAL" />
       <updated>1534032419469</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Second Commit&#10;Testing:&#10;-commiting from IDEA">
+      <created>1534032572977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1534032572977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40752000" />
+    <option name="totallyTimeSpent" value="46160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1758" height="1407" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19257951" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19257951" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -419,7 +433,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299293" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299293" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998429" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -451,6 +465,7 @@
     <MESSAGE value="First Commit&#10;Added:&#10;-cleaning PC by CCleaner&#10;-settings for cleaning&#10;-downloading key for antivirus from the Internet &#10;Completed:&#10;-creating UI" />
     <MESSAGE value="Second Commit&#10;Testing:&#10;-commiting from IDEA" />
     <option name="LAST_COMMIT_MESSAGE" value="Second Commit&#10;Testing:&#10;-commiting from IDEA" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/RobotDefaultActions.java" />
@@ -515,16 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommandLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -532,10 +537,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/AutoControl/RobotDefault.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CCleaner/CCleaner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="340">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Antivirus/Antivirus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -544,24 +569,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/StartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        <state relative-caret-position="1000">
+          <caret line="145" column="29" selection-start-line="145" selection-start-column="29" selection-end-line="145" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2366#2367#0" expanded="true" />
             <element signature="e#2428#2429#0" expanded="true" />
             <element signature="e#2481#2482#0" expanded="true" />
             <element signature="e#2545#2546#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Antivirus/Antivirus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -44,6 +44,18 @@ public class RobotDefault extends Robot {
         robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
+    public void pressWindows(){
+        robot.keyPress(KeyEvent.VK_WINDOWS);
+        robot.delay(defDelay);
+        robot.keyRelease(KeyEvent.VK_WINDOWS);
+    }
+
+    public void pressTab(){
+        robot.keyPress(KeyEvent.VK_TAB);
+        robot.delay(defDelay);
+        robot.keyRelease(KeyEvent.VK_TAB);
+    }
+
     public void printText(String text){
         try {
             char[] chars = text.toCharArray();

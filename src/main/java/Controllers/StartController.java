@@ -1,26 +1,25 @@
 package Controllers;
 
+import Antivirus.Antivirus;
 import AutoControl.RobotDefault;
 import CCleaner.CCleaner;
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-
 import javafx.stage.FileChooser;
-
 
 import java.awt.*;
 import java.awt.im.InputContext;
-import java.io.*;
+import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import static java.awt.event.KeyEvent.*;
+import static java.awt.event.KeyEvent.VK_SPACE;
+import static java.awt.event.KeyEvent.VK_WINDOWS;
 
 
 public class StartController {
@@ -39,9 +38,8 @@ public class StartController {
     private String fileCCleaner = "CCleaner.exe";
     private String folderAntivirus = "C:/Program Files/ESET/ESET Security";
     private String fileAntivirus = "egui.exe";
+    private String nameAntivirus = "Eset Security";
     private String webSitePath = "http://obnovlenie-nod32.work/kody-aktivacii-ess-9/";
-    private short countOfKeys = 5;
-    private String[] antivirusKeys = new String[countOfKeys];
 
 
     public void initialize() {
@@ -86,38 +84,6 @@ public class StartController {
         folderAntivirus = chooseFile(pathAntivirusLabel);
     }
 
-    public void getKey() {
-        URL url;
-        InputStream is = null;
-        BufferedReader br;
-        String line;
-
-        try {
-            url = new URL("http://obnovlenie-nod32.work/kody-aktivacii-ess-9/");
-            is = url.openStream();  // throws an IOException
-            br = new BufferedReader(new InputStreamReader(is));
-            Pattern p = Pattern.compile("[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}(\\W|\\w)*");
-            Matcher m;
-            short count = 0;
-            while ((line = br.readLine()) != null) {
-                m = p.matcher(line);
-                if (m.matches()) {
-                    antivirusKeys[count] = line.trim().replaceAll("<(\\W|\\w)*>", "");
-                    System.out.println(antivirusKeys[count]);
-                    count++;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (is != null) is.close();
-            } catch (IOException ioe) {
-                // nothing to see here
-            }
-        }
-    }
-
     public void changeStateCleaner() {
         boolean isEnable = !checkBoxCleaner.isSelected();
         pathCCleanerLabel.setDisable(isEnable);
@@ -139,7 +105,7 @@ public class StartController {
                 startClean();
             if (checkBoxAntivirus.isSelected())
                 startAntivirusUpdate();
-
+            Platform.runLater(()->showSuccessWindow());
             return null;
         }
 
@@ -149,12 +115,10 @@ public class StartController {
 //            cleaner.cmdBootRegistry();
         }
 
-        private void startAntivirusUpdate(){
-
+        private void startAntivirusUpdate() throws AWTException {
+            Antivirus antivirus = new Antivirus();
+            antivirus.updateKey(nameAntivirus);
         }
-
-
-
 
 
     }
@@ -164,10 +128,24 @@ public class StartController {
         InputContext inputContext = InputContext.getInstance();
         if (inputContext.getLocale().equals(rusLocal)) {
             try {
-                new RobotDefault().pressButtons(VK_WINDOWS,VK_SPACE);
+                new RobotDefault().pressButtons(VK_WINDOWS, VK_SPACE);
             } catch (AWTException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void showSuccessWindow() {
+        try {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Выполнение");
+            alert.setHeaderText(null);
+            alert.setContentText("      Success " +
+                    "\n      Выполнение чистки завершено");
+
+            alert.showAndWait();
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

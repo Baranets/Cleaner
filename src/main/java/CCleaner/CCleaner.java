@@ -18,7 +18,7 @@ public class CCleaner extends RobotDefault {
     }
 
     public void cmdClean(String folderCCleaner) {
-        pressButton(VK_WINDOWS);
+        pressWindows();
         delay(1000);
 
         printText("cmd");
