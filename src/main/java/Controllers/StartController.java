@@ -6,10 +6,11 @@ import CCleaner.CCleaner;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
 import java.awt.*;
@@ -21,7 +22,7 @@ import java.util.Locale;
 import static java.awt.event.KeyEvent.VK_SPACE;
 import static java.awt.event.KeyEvent.VK_WINDOWS;
 
-
+//Контроллер MainWindow.fxml файла
 public class StartController {
 
     @FXML
@@ -29,25 +30,68 @@ public class StartController {
     @FXML
     private Button buttonCleaner, buttonAntivirus;
     @FXML
-    private CheckBox checkBoxCleaner, checkBoxAntivirus;
-
+    private CheckBox checkBoxCleaner, checkBoxAntivirus, checkBoxURL;
+    @FXML
+    private TextField urlTextField;
 
     private final Locale rusLocal = new Locale("ru", "RU");
     private final Locale enLocal = new Locale("en", "US");
     private String folderCCleaner = "C:/Program Files/CCleaner";
     private String fileCCleaner = "CCleaner.exe";
     private String folderAntivirus = "C:/Program Files/ESET/ESET Security";
-    private String fileAntivirus = "egui.exe";
+    private String fileAntivirus = "egui.exe"; //TODO Реализовать работу через данный файл (антивирус не запускается)
     private String nameAntivirus = "Eset Security";
-    private String webSitePath = "http://obnovlenie-nod32.work/kody-aktivacii-ess-9/";
-
+    private String webSitePath = "https://fornod.net/";
 
     public void initialize() {
         pathCCleanerLabel.setText(folderCCleaner + "/" + fileCCleaner);
         pathAntivirusLabel.setText(folderAntivirus + "/" + fileAntivirus);
+        urlTextField.setText(webSitePath);
     }
 
-    public void start() throws AWTException {
+    @FXML
+    //Метод для выбора пути к файлу CCleaner(64).exe
+    public void chooseCCleanerFolder() {
+        folderCCleaner = chooseFile(pathCCleanerLabel);
+    }
+
+    @FXML
+    //Метод для выбора пути к файлу запуска Антивируса
+    public void chooseAntivirusFolder() {
+        folderAntivirus = chooseFile(pathAntivirusLabel);
+    }
+
+    @FXML
+    //Метод изменяющий состояние элементов настроек в UI отвечающие за CCleaner
+    public void changeStateCleaner() {
+        changeStateCheckBox(checkBoxCleaner,pathCCleanerLabel,buttonCleaner);
+    }
+
+    @FXML
+    //Метод изменяющий состояние элементов настроек в UI отвечающие за Antivirus
+    public void changeStateAntivirus() {
+        changeStateCheckBox(checkBoxAntivirus,pathAntivirusLabel,buttonAntivirus);
+    }
+
+    @FXML
+    //Метод изменяющий состояние элементов настроек в UI отвечающие за сайты с ключами к Antivirus
+    public void changeStateURL() {
+        changeStateCheckBox(checkBoxURL,urlTextField);
+    }
+
+    //Реализация метода отвечающего за изменения состояния элементов UI в зависимости от состояния CheckBox
+    private void changeStateCheckBox(CheckBox checkBox, Parent ... parent) {
+        boolean isEnable = checkBox.isSelected();
+        for (Parent p: parent) {
+            p.setDisable(!isEnable);
+        }
+    }
+
+    @FXML
+    //Основной метод отвечающий за запуск выполнения очистки и смены ключа Antivirus
+    public void start() {
+        webSitePath = urlTextField.getText();
+
         inputLanguageTest();
 
         new Thread(new Clear()).start();
@@ -74,57 +118,40 @@ public class StartController {
         return folder;
     }
 
-    @FXML
-    public void chooseCCleanerFolder() {
-        folderCCleaner = chooseFile(pathCCleanerLabel);
-    }
-
-    @FXML
-    public void chooseAntivirusFolder() {
-        folderAntivirus = chooseFile(pathAntivirusLabel);
-    }
-
-    public void changeStateCleaner() {
-        boolean isEnable = !checkBoxCleaner.isSelected();
-        pathCCleanerLabel.setDisable(isEnable);
-        buttonCleaner.setDisable(isEnable);
-    }
-
-    public void changeStateAntivirus() {
-        boolean isEnable = !checkBoxAntivirus.isSelected();
-        pathAntivirusLabel.setDisable(isEnable);
-        buttonAntivirus.setDisable(isEnable);
-    }
-
+    //Класс для создания второстепенного потока
     public class Clear extends Task {
 
         @Override
         protected Object call() throws Exception {
 
+            //Проверка состояния CheckBox отвечающего за CCleaner
             if (checkBoxCleaner.isSelected())
                 startClean();
+            //Проверка состояния CheckBox отвечающего за Antivirus
             if (checkBoxAntivirus.isSelected())
                 startAntivirusUpdate();
-            Platform.runLater(()->showSuccessWindow());
+
+            //После выполнения работы отобразить уведомление об этом
+            Platform.runLater(StartController.this::showSuccessWindow);
             return null;
         }
 
+        //Запуск чистки системы при помощи CCleaner
         private void startClean() throws AWTException {
             CCleaner cleaner = new CCleaner();
-            cleaner.cmdClean(folderCCleaner);
+            cleaner.cmdClean(folderCCleaner, fileCCleaner);
 //            cleaner.cmdBootRegistry();
         }
 
+        //Обновление ключа активации Antivirus
         private void startAntivirusUpdate() throws AWTException {
-            Antivirus antivirus = new Antivirus();
+            Antivirus antivirus = new Antivirus(webSitePath);
             antivirus.updateKey(nameAntivirus);
         }
-
-
     }
 
+    //Проверка языка ввода операционной системы
     private void inputLanguageTest() {
-        System.out.println(InputContext.getInstance().getLocale());
         InputContext inputContext = InputContext.getInstance();
         if (inputContext.getLocale().equals(rusLocal)) {
             try {
@@ -135,6 +162,7 @@ public class StartController {
         }
     }
 
+    //Отображает окно уведомления о завершении выполнения работы
     private void showSuccessWindow() {
         try {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

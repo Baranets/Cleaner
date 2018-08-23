@@ -6,8 +6,8 @@ import java.awt.*;
 
 import static java.awt.event.KeyEvent.*;
 
+//Класс предназначенный для взаимодействия со сторонним ПО
 public class CCleaner extends RobotDefault {
-
 
     public CCleaner() throws AWTException {
         super();
@@ -17,7 +17,9 @@ public class CCleaner extends RobotDefault {
         super(robot, defDelay);
     }
 
-    public void cmdClean(String folderCCleaner) {
+    //Метод выполняет чистку временных файлов при помощи строннего ПО (CCleaner)
+    public void cmdClean(String folderCCleaner, String exeCCleaner) {
+        //Открывает командную строку (cmd) через пуск
         pressWindows();
         delay(1000);
 
@@ -27,28 +29,33 @@ public class CCleaner extends RobotDefault {
         pressEnter();
         delay(1000);
 
+        //Переход в дерикторию с программой CCleaner
         printText("cd " + folderCCleaner);
         pressEnter();
         delay(250);
 
-        printText("CCleaner.exe /auto");
+        //Вызов CCleaner(64).exe с ключом auto для ислопнения чистки PC
+        printText(exeCCleaner + " /auto");
         pressEnter();
         delay(10000);
-        pressButtons(VK_ALT,VK_F4);
+
+        //Закрытие командной строки (cmd)
+        pressButtons(VK_ALT, VK_F4);
     }
 
     //TODO COMMING SOON
     public void cmdBootRegistry() {
 
-            pressButton(VK_WINDOWS);
+        pressButton(VK_WINDOWS);
+        delay(1000);
+        printText("CCleaner");
+        pressEnter();
+        delay(5000);
+        for (int i = 0; i < 100; i++) {
             delay(1000);
-            printText("CCleaner");
-            pressEnter();
-            delay(5000);
-            pressButton(VK_PAGE_DOWN);
+            System.out.println(i);
             pressButton(VK_TAB);
-            pressEnter();
-
-
+        }
     }
+
 }

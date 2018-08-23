@@ -3,17 +3,16 @@ package AutoControl;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
+//Дополнительная надстройка над awt.Robot
 public class RobotDefault extends Robot {
 
     private Robot robot;
-    private int defDelay = 10;
+    private int defDelay = 10; //Задержка между действиями по умолчанию
 
     public RobotDefault() throws AWTException {
         super();
         robot = new Robot();
     }
-
-
 
     public RobotDefault(Robot robot, int defDelay) throws AWTException {
         super();
@@ -21,13 +20,14 @@ public class RobotDefault extends Robot {
         this.defDelay = defDelay;
     }
 
-
+    //Метод реализующий нажатие одной из кнопок
     public void pressButton(int keycode){
         robot.keyPress(keycode);
         robot.delay(defDelay);
         robot.keyRelease(keycode);
     }
 
+    //Метод реализующий сочитание двух клавиш
     public void pressButtons(int keycode1, int keycode2){
         robot.keyPress(keycode1);
         robot.keyPress(keycode2);
@@ -38,24 +38,22 @@ public class RobotDefault extends Robot {
         robot.keyRelease(keycode2);
     }
 
+    //Метод реализующий нажатие кнопки Enter
     public void pressEnter(){
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.delay(defDelay);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        pressButton(KeyEvent.VK_ENTER);
     }
 
+    //Метод реализующий нажатие кнопки Windows
     public void pressWindows(){
-        robot.keyPress(KeyEvent.VK_WINDOWS);
-        robot.delay(defDelay);
-        robot.keyRelease(KeyEvent.VK_WINDOWS);
+        pressButton(KeyEvent.VK_WINDOWS);
     }
 
+    //Метод реализующий нажатие кнопки Tab
     public void pressTab(){
-        robot.keyPress(KeyEvent.VK_TAB);
-        robot.delay(defDelay);
-        robot.keyRelease(KeyEvent.VK_TAB);
+        pressButton(KeyEvent.VK_TAB);
     }
 
+    //Метод реализующий имитацию набора текста с клавиатуры
     public void printText(String text){
         try {
             char[] chars = text.toCharArray();
@@ -70,10 +68,12 @@ public class RobotDefault extends Robot {
         }
     }
 
+    //getter
     public Robot getRobot() {
         return robot;
     }
 
+    //setter
     public void setRobot(Robot robot) {
         this.robot = robot;
     }
