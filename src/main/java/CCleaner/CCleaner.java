@@ -37,7 +37,7 @@ public class CCleaner extends RobotDefault {
         //Вызов CCleaner(64).exe с ключом auto для ислопнения чистки PC
         printText(exeCCleaner + " /auto");
         pressEnter();
-        delay(10000);
+        delay(20000);
 
         //Закрытие командной строки (cmd)
         pressButtons(VK_ALT, VK_F4);

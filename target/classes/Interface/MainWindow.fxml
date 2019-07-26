@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="1200.0" maxWidth="600.0" minHeight="600.0" minWidth="500.0" prefHeight="600.0" prefWidth="600.0" stylesheets="@../Style/MainWindow.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StartController">
+   <top>
+      <VBox prefHeight="20.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Выполнить">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#start" text="Запустить" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Настройки">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#chooseCCleanerFolder" text="Выбрать путь CCleaner" />
+                        <MenuItem mnemonicParsing="false" onAction="#chooseAntivirusFolder" text="Выбрать путь Антивируса" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Помощь">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="О Программе" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox prefHeight="78.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <Separator layoutX="95.0" layoutY="10.0" prefHeight="17.0" prefWidth="25.0" HBox.hgrow="ALWAYS" />
+                  <Label fx:id="settingsLable" prefHeight="17.0" prefWidth="75.0" text="Настройки" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Separator prefHeight="4.0" prefWidth="373.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Separator>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox>
+               <children>
+                  <CheckBox fx:id="checkBoxCleaner" mnemonicParsing="false" onAction="#changeStateCleaner" prefHeight="25.0" prefWidth="12.0" selected="true" styleClass="CheckBox" />
+                  <Label fx:id="pathCCleanerLabel" cache="true" prefHeight="25.0" prefWidth="600.0" text="Path to CCleaner.exe" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="buttonCleaner" minWidth="65.0" mnemonicParsing="false" onAction="#chooseCCleanerFolder" prefHeight="25.0" prefWidth="60.0" styleClass="Button" text="Выбрать" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <children>
+                  <CheckBox fx:id="checkBoxAntivirus" mnemonicParsing="false" onAction="#changeStateAntivirus" prefHeight="33.0" prefWidth="21.0" selected="true" styleClass="CheckBox" />
+                  <Label fx:id="pathAntivirusLabel" prefHeight="25.0" prefWidth="600.0" text="Path to ESET.exe" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="buttonAntivirus" minWidth="65.0" mnemonicParsing="false" onAction="#chooseAntivirusFolder" prefHeight="25.0" prefWidth="60.0" styleClass="Button" text="Выбрать" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="checkBoxURL" mnemonicParsing="false" onAction="#changeStateURL" prefHeight="33.0" prefWidth="21.0" styleClass="CheckBox">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Label prefHeight="25.0" prefWidth="191.0" text="URL для поиска ключей">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
+                  <TextField fx:id="urlTextField" disable="true" prefHeight="25.0" prefWidth="483.0">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin></TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Separator prefHeight="17.0" prefWidth="385.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </Separator>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <Button fx:id="clearButton" mnemonicParsing="false" onAction="#start" prefHeight="150.0" prefWidth="250.0" styleClass="cleanButton" text="Запустить" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </center>
+</BorderPane>

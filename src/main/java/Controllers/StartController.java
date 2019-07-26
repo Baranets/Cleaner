@@ -37,7 +37,7 @@ public class StartController {
     private final Locale rusLocal = new Locale("ru", "RU");
     private final Locale enLocal = new Locale("en", "US");
     private String folderCCleaner = "C:/Program Files/CCleaner";
-    private String fileCCleaner = "CCleaner.exe";
+    private String fileCCleaner = "CCleaner64.exe";
     private String folderAntivirus = "C:/Program Files/ESET/ESET Security";
     private String fileAntivirus = "egui.exe"; //TODO Реализовать работу через данный файл (антивирус не запускается)
     private String nameAntivirus = "Eset Security";
